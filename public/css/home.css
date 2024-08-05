@@ -1,0 +1,105 @@
+.webtitle {
+    padding: 20px 40px 0 40px;
+    text-align: center;
+    font-size: 5vw;
+    color: #E8E3DD;
+    white-space: nowrap;
+    line-height: 1;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+    display: flex;
+    flex-direction: column;
+}
+
+.webtitle span {
+    font-family: 'Crimson Pro';
+    display: inline-block;
+    opacity: 0;
+    margin: 0;
+    animation: animateLetters 2s ease-out forwards;
+}
+
+.website-description {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 20px 20px 20px;
+    animation: fadeInUp 1s ease-out forwards;
+    font-size: 1vw;
+    color: #fff;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.card {
+    background-color: #fff;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 250px;
+    color: #213131;
+    height: 220px;
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 5px 8px 2px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease-in-out;
+    animation: fadeInUp 2s ease-in;
+}
+
+#first {
+    background-image: url("https://t0.gstatic.com/images?q=tbn:ANd9GcSJpp3gzqIt0h2MCJjO9gosfptLVxpI8l9Iwh0_sLgQd-gJ0aH9");
+}
+
+#second {
+    background-image: url("https://www.creativefabrica.com/wp-content/uploads/2021/03/26/Modern-sofa-front-view-furniture-3d-Graphics-10006303-3-580x348.jpg");
+}
+
+#third {
+    background-image: url("https://topfurnitureaccessories.com/wp-content/uploads/2023/04/Untitled-design-1-960x1000.png");
+}
+
+#fourth {
+    background-image: url("https://photo-cdn2.icons8.com/oaY1QOXSRlsFXQ2czuJPCPrNdKGGYNtSFMhIEJjmEdM/rs:fit:760:1072/czM6Ly9pY29uczgu/bW9vc2UtcHJvZC5l/eHRlcm5hbC9hMmE0/Mi8wNzhiOWEwNmY1/NDM0OWNkOWQzNTg4/YzM0NmRmYjI2MS5q/cGc.jpg");
+
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-button {
+    position: absolute;
+    width: calc(100% - 20px);
+    bottom: 10px;
+    margin: 0 10px;
+    background-color: #213131;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.card:hover .card-button {
+    opacity: 1;
+}

@@ -1,0 +1,57 @@
+.Accounts,
+.Products,
+.Appointment,
+.Inventory,
+.POS {
+    max-width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    margin-left: 40px;
+    margin-right: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #213131;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background-color: #213131;
+    color: #fff;
+}
+
+tbody tr:hover {
+    background-color: #213131;
+    color: #fff;
+}
+
+.grayed {
+    background-color: #dddddd88;
+}
+
+.action {
+    margin-right: 5px;
+}
+
+.action:hover {
+    color: #000;
+    background-color: #fff;
+    transform: translateY(-5px);
+}
+
+.accountTable-container {
+    width: 100%;
+    overflow: auto;
+}

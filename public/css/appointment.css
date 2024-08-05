@@ -1,0 +1,120 @@
+.Appointment {
+    padding: 20px;
+}
+
+.appointment-form {
+    width: calc(100% - 150px); 
+    background-color: #fff;
+    margin: 20px auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+.appointment-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.appointment-form label {
+    margin-bottom: 5px;
+}
+
+.appointment-form input,
+.appointment-form textarea {
+    margin-bottom: 15px;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.appointment-form button {
+    padding: 10px;
+    background-color: #342F2D;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.appointment-table {
+    width: calc(100% - 150px);
+    margin: 5px auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-sizing: border-box;
+    color: #fff;
+}
+
+.appointment-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.appointment-table th, .appointment-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.appointment-table th {
+    background-color: #131F1F;
+    color: white;
+}
+
+#banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 50px;
+    background-image: url("../images/APPOINTMENT.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 40vh;
+    width: 100vw;
+    margin: 0;
+}
+
+#banner h1{
+    font-family: 'Crimson Pro';
+    font-size: 70px;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+#appointmentForm .dropdown-container {
+    margin-top: 5px;
+    width: 100%;
+    position: relative;
+    display: inline-block;
+}
+
+#appointmentForm .dropdown-container select {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+
+#appointmentForm .dropdown-container select option{
+   font-size: 18px;
+}
+
+.green {
+    color: rgb(2, 235, 2);
+}
+
+.red {
+    color: red;
+}
+
+.gray {
+    background-color: #dddddd69;
+    
+}

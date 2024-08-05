@@ -1,0 +1,151 @@
+.account-settings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin-top: 60px;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 50px;
+    margin-bottom: 20px;
+}
+
+.profile-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
+    padding: 5px;
+    background-color: #ddd;
+}
+
+.profile-image img {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.profile-details {
+    flex-grow: 1;
+}
+
+.profile-details h2 {
+    font-size: 24px;
+    color: #342F2D;
+    margin-bottom: 10px;
+}
+
+.profile-details p {
+    font-size: 16px;
+    color: #342F2D;
+    margin-bottom: 8px;
+}
+
+.update-button,
+.logout-button {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+button {
+    padding: 10px;
+    background-color: #213131;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.logout-button button {
+    background-color: red;
+}
+
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    margin-top: 5px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.update-form {
+    overflow-y: scroll;
+    height: 600px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+.update-form h2 {
+    font-size: 24px;
+    color: #342F2D;
+    margin-bottom: 20px;
+}
+
+
+input,
+textarea {
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.circle {
+    background-color: #342F2D;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-align: center;
+    margin: 0 auto;
+}
+.circle img {
+    width: 35px;
+    height: 35px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}
+
+.update-form .dropdown-container {
+    margin-top: 5px;
+    max-width: 400px;
+    width: 100%;
+}
+
+.update-form select {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.grayed {
+    background-color: #dddddd88;
+}

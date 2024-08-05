@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antonio's Curtains & Upholstery</title>
+    <link rel="icon" href="../images/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href='https://fonts.googleapis.com/css?family=Crimson Pro' rel='stylesheet'>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/account.css">
+    <link rel="stylesheet" type="text/css" href="../css/adminaccount.css">
+    <link rel="stylesheet" type="text/css" href="../css/inventory.css">
+    <link rel="stylesheet" type="text/css" href="../css/pos.css">
+</head>
+
+<body>
+
+    <div class="site-name"><img src="../images/logo.png">Antonio's Curtains & Upholstery</div>
+
+    <div class="searchxuser">
+        <div class="useraccount"> UserName <div class="circle"><i class="fa-solid fa-user fa-lg"></i></div>
+
+        </div>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a class="navhome">Accounts</a></li>
+            <li><a class="navproducts">Orders</a></li>
+            <li><a class="navappointment">Appointment</a></li>
+            <li><a class="navaboutus">Inventory</a></li>
+            <li><a class="navcart">POS</a></li>
+        </ul>
+    </nav>
+
+    <div class="Accounts">
+        <class class="section-header">
+            <h2 class="slide-in">Accounts Management</h2>
+            <class class="header-rights admin">
+                <button id="add-admin-button"><i class="fa-solid fa-user"></i></button>
+                <p>Add new admin account</p>
+            </class>
+        </class>
+        <div class="accountTable-container">
+            <table>
+                <thead class="slide-up">
+                    <tr>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>Name</th>
+                        <th>Phone number</th>
+                        <th>Account Type</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="userTableBody">
+                </tbody>
+            </table>
+        </div>
+        <div id="userPagination">
+        </div>
+        <div>
+
+        </div>
+    </div>
+
+    <div class="Products" style="overflow-x:auto;">
+        <class class="section-header">
+            <h2 class="slide-in">Orders Management</h2>
+            <class class="header-rights">
+                <button class="orders-inbox-button"><i class="fa-solid fa-inbox"></i></button>
+                <button class="orders-archive-button"><i class="fa-solid fa-box-archive"></i></button>
+                <button class="orders-sort-button"><i class="fa-solid fa-sort"></i></button>
+            </class>
+        </class>
+        <div id="orders-sort-form-container" style="display: none;">
+            <form id="orders-sort-form">
+                <p>Sort</p>
+                <hr>
+                <input type="radio" id="orders-All" name="Orders" value="">
+                <label for="All">All</label><br>
+
+                <input type="radio" id="Door-to-Door" name="Orders" value="Door-to-Door">
+                <label for="Door-to-Door">Door-to-Door</label><br>
+
+                <input type="radio" id="Self-Pickup" name="Orders" value="Self-Pickup">
+                <label for="Self-Pickup">Self-Pickup</label><br>
+
+                <input type="radio" id="Cash on Delivery/Pickup" name="Orders" value="Cash on Delivery/Pickup">
+                <label for="Cash on Delivery/Pickup">COD/Pickup</label><br>
+
+                <input type="radio" id="Bank Transfer" name="Orders" value="Bank Transfer">
+                <label for="Bank Transfer">Bank Transfer</label><br>
+
+                <input type="radio" id="Credit/Debit Card" name="Orders" value="Credit/Debit Card">
+                <label for="Credit/Debit Card">Credit/Debit Card</label><br>
+
+                <div class="orders-filter-buttons">
+                    <button class="orders-Applyfilter">Apply</button>
+                    <button class="orders-Cancelfilter">Cancel</button>
+                </div>
+            </form>
+        </div>
+        <table id="productsTableBody">
+            <thead class="slide-up">
+                <tr>
+                    <th>Product Id</th>
+                    <th>Name</th>
+                    <th>Phone Number</th>
+                    <th>Quanity</th>
+                    <th>Variation</th>
+                    <th>Payment Option</th>
+                    <th>Delivery Option</th>
+                    <th>Delivery Address</th>
+                    <th>Order Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <thead>
+                </thead>
+            </tbody>
+        </table>
+
+        <div></div>
+    </div>
+    <div class="Appointment">
+        <class class="section-header">
+            <h2 class="slide-in">Appointment Management</h2>
+            <class class="header-rights">
+                <button class="appointment-inbox-button"><i class="fa-solid fa-inbox"></i></button>
+                <button class="appointment-archive-button"><i class="fa-solid fa-box-archive"></i></button>
+                <button class="appointment-sort-button"><i class="fa-solid fa-sort"></i></button>
+            </class>
+        </class>
+        <div id="appointment-sort-form-container" style="display: none;">
+            <form id="appointment-sort-form">
+                <p>Sort</p>
+                <hr>
+                <input type="radio" id="All" name="Location" value="">
+                <label for="All">All</label><br>
+
+                <input type="radio" id="Site Visit" name="Location" value="Site Visit">
+                <label for="Site Visit">Site Visit</label><br>
+
+                <input type="radio" id="Office Visit" name="Location" value="Office Visit">
+                <label for="Office Visit">Office Visit</label><br>
+
+                <div class="appointment-filter-buttons">
+                    <button class="appointment-Applyfilter">Apply</button>
+                    <button class="appointment-Cancelfilter">Cancel</button>
+                </div>
+            </form>
+        </div>
+        <table id="appointmentuserTableBody">
+            <thead class="slide-up">
+                <tr>
+                    <th>Name</th>
+                    <th>Phone Number</th>
+                    <th>Email</th>
+                    <th>Date & Time</th>
+                    <th>Location</th>
+                    <th>Message</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <thead>
+                </thead>
+            </tbody>
+        </table>
+        <div id="pagination">
+        </div>
+        <div class="message-overlay">
+            <div class="message-overlay-content">
+                <p class="message"></p>
+            </div>
+        </div>
+    </div>
+    <div class="Inventory">
+        <div class="header-container">
+            <h2 class="slide-in">Inventory Management</h2>
+            <div class="search-bar">
+                <input type="text" class="searchInput" placeholder="Search..." id="inventoryInput">
+                <button id="inventorysearchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+        </div>
+        <table id="inventoryuserTableBody">
+            <thead class="slide-up">
+                <tr>
+                    <th>Product ID</th>
+                    <th>Product Name</th>
+                    <th>Type of Product</th>
+                    <th>Price</th>
+                    <th>Available Stock</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <thead>
+                </thead>
+            </tbody>
+        </table>
+
+        <div class="inventoryOverlay" id="inventoryOverlay" style="display: none;">
+            <div class="update-form">
+                <label for="isCustomizable">Customizable?:</label>
+                <select id="isCustomizable" name="isCustomizable">
+                    <option value="false">No</option>
+                    <option value="true">Yes</option>
+                </select>
+
+
+                <label for="productId" hidden>Product ID:</label>
+                <input type="number" id="product-id" name="productId" hidden>
+
+                <label for="productName">Product Name:</label>
+                <input type="text" id="product-name" name="productName">
+
+                <label for="productType">Type of Product:</label>
+                <select id="product-type" name="productType">
+                    <option value="Chair">Chair</option>
+                    <option value="Table">Table</option>
+                    <option value="Bed">Bed</option>
+                    <option value="Curtains">Curtains</option>
+                    <option value="Sets">Sets</option>
+                </select>
+
+                <label for="productMaterial">Product Material:</label>
+                <div class="multiple-input-container">
+                    <input type="text" id="product-material-input" class="product-material-input"
+                        placeholder="Enter material and press Enter">
+                    <div id="product-material-tags" class="product-material-tags"></div>
+                </div>
+
+                <label for="productPrice">Price:</label>
+                <input type="number" id="product-price" name="productPrice">
+
+                <label for="availableStock">Available Stock:</label>
+                <input type="number" id="available-stock" name="availableStock">
+
+                <label for="productDescription">Product Description:</label>
+                <textarea id="product-description" name="productDescription"></textarea>
+
+
+                <label for="productImages">Product Images:</label>
+                <input type="file" id="product-images" name="productImages" accept="image/*" multiple>
+
+                <div id="image-preview-container"></div>
+
+                <button class="inventory-add-button">Add</button>
+                <button class="inventory-update-button">Update</button>
+                <button class="inventory-cancel-button">Cancel</button>
+            </div>
+        </div>
+
+        <button class="inventory-add-product">Add</button>
+    </div>
+    <div class="POS">
+        <div class="chartCard">
+            <div class="chartBox">
+                <button id="dayButton" class="time-range-button selected" value="day">Day</button>
+                <button id="weekButton" class="time-range-button" value="week">Week</button>
+                <button id="monthButton" class="time-range-button" value="month">Month</button>
+                <button id="annualButton" class="time-range-button" value="annual">Annual</button>
+                <canvas id="myChart"></canvas>
+            </div>
+        </div>
+        <div class="chartMenu">
+            <div class="menupercent">
+                <div class="progress-bar" role="progressbar" aria-valuenow="99" aria-valuemin="100" aria-valuemax="100">
+                    350000</div>
+                <p>Total Sales</p>
+            </div>
+            <div class="reporttitle">
+                <h6 class="strong-day">W E E K</h6><br>
+                <h6> R E P O R T </h6>
+            </div>
+        </div>
+        <button class="print"><i class="fa-solid fa-print"></i></button>
+    </div>
+
+    <div class="Account slide-in">
+        <div class="account-settings">
+            <div class="profile">
+                <div class="profile-image">
+                    <label for="profilePictureInput">
+                        <img src="/images/bg.png" alt="Profile Picture" id="profilePicture">
+                    </label>
+                    <input type="file" id="profilePictureInput" accept=".jpg, .png, .jpeg" style="display: none">
+                </div>
+                <div class="profile-details">
+                    <h2 id="userUserName">UserName</h2>
+                    <p>Name: <span id="userName">Name</span></p>
+                    <p>Contact No.: <span id="userContact">09xxxxxxxx</span></p>
+                    <p>Email: <span id="userEmail">useremail@email.com</span></p>
+                    <p>Address: <span id="userAddress">123 East Street, Main City</span></p>
+
+                    <div class="update-button">
+                        <button>Update Details</button>
+                    </div>
+                    <div class="logout-button">
+                        <button>Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay" style="display: none;">
+        <div class="update-form">
+            <label for="username">Username:</label>
+            <input type="text" id="update-username" name="username">
+
+            <label for="password">Password:</label>
+            <input type="password" id="update-password" readonly name="password" class="grayed" disabled>
+
+            <label for="name">Name:</label>
+            <input type="text" id="update-name" name="name">
+
+            <label for="contact">Contact Number:</label>
+            <input type="text" id="update-contact" name="contact">
+
+            <label for="email">Email:</label>
+            <input type="email" id="update-email" name="email" readonly class="grayed" disabled>
+
+            <label for="address">Address:</label>
+            <input type="text" id="update-address" name="address">
+
+            <label for="accounttype">Account Type:</label>
+            <div class="dropdown-container">
+                <select id="update-account-type" name="accounttype" disabled>
+                    <option value="Customer">Customer</option>
+                    <option value="Admin">Admin</option>
+                </select>
+            </div>
+            <button class="update-submit-button">Update</button>
+            <button class="cancel-button">Cancel</button>
+        </div>
+
+    </div>
+
+
+
+    <script type="module" src="../js/firebase.js"></script>
+    <script type="module" src="../js/adminscript.js"></script>
+    <script type="module" src="../js/account.js"></script>
+    <script type="module" src="../js/appointment.js"></script>
+    <script type="module" src="../js/inventory.js"></script>
+    <script type="module" src="../js/apicall.js"></script>
+    <script type="module" src="../js/adminproducts.js"></script>
+    <script type="module" src="../js/pos.js"></script>
+</body>
+
+</html>

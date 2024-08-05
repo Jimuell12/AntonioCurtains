@@ -1,0 +1,324 @@
+.Cart {
+    width: 100%;
+}
+
+.product-table-container {
+    margin: 30px 100px;
+    border-radius: 3px;
+    box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12);
+
+}
+
+.product-delivery-address {
+    margin: 30px 100px;
+    border-radius: 3px;
+    background-color: #fff;
+    padding: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 21px;
+    box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12);
+
+}
+
+.namexbutton {
+    margin-bottom: 10px;
+}
+
+.namexbutton p{
+    font-size: 16px;
+}
+
+.namexbutton button {
+    background-color: #21232300;
+    color: #213131;
+    border: 1px solid #213131;
+}
+
+.addresstitle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2%;
+    color: #213131;
+}
+
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    color: #212323;
+    overflow-x: auto;
+}
+
+.product-table th, .product-table td {
+
+    padding: 30px;
+    text-align: center;
+}
+
+.product-table th {
+    background-color: #fff;
+    color: #b4b4b4;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.product-table td {
+    background-color: #213131;
+    margin-top: 10px;
+    color: #fff;
+    font-size: 14px;
+}
+
+.productcolumn {
+    width: 50%;
+    text-align: left;
+    text-align-last: left;
+    color: #212323;
+}
+.product-image-cart {
+    width: 100px;
+    height: 100px;
+}
+
+.product-cart {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+}
+
+.product-image-cart img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.product-variations-cart {
+    max-width: 20%;
+    color: #b4b4b4;
+    font-size: 12px;
+}
+
+.product-details-cart {
+    max-width: 30%;
+}
+
+.product-actions {
+    cursor: pointer;
+}
+
+.product-checkout{
+    margin: 30px 100px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: end;
+    gap: 2%;
+}
+
+.product-checkout p {
+    margin: 10px;
+}
+
+#overalltotal {
+    font-size: 16px;
+    color: #212323;
+}
+
+.product-checkout button {
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.delivery-form {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 30%;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.delivery-details {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.hobutton {
+    display: flex;
+    flex-direction: row;
+}
+
+.delivery-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.delivery-form select,
+.delivery-form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+.hobutton .btn {
+    background-color: #fff;
+    border: 0;
+    border: 1px solid #212323;
+    margin: 2px;
+    cursor: pointer;
+}
+
+
+.hobutton .btn-success {
+    background-color: #213131;
+    color: #fff;
+}
+.delivery-form input[type="submit"]:hover {
+    background-color: #212323a1;
+}
+
+.delivery-form hr {
+    border: 1px solid #ddd;
+}
+
+.dropdown-container {
+    position: relative;
+}
+
+.paymentmethod {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 30px 100px;
+    gap: 2%;
+    border-radius: 3px;
+    background-color: #fff;
+    padding: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 21px;
+}
+
+.payment-buttons {
+    max-width: 30%;
+}
+
+.payment-buttons button {
+    margin: 5px;
+    border: 1px solid #213131;
+    background-color: #21232300;
+    color: #213131;
+}
+
+.payment-buttons .selected {
+    border: 2px solid #213131;
+    color: #213131;
+    font-weight: 600;
+}
+
+.payment-buttons .selected2 {
+    border: 2px solid #213131;
+    color: #213131;
+    font-weight: 600;
+}
+.payment-buttons .cod:hover {
+    border: 2px solid #213131;
+    font-weight: 600;
+}
+
+.payment-buttons .notallowed:hover {
+    cursor: not-allowed;
+    color: #c1c1c1;
+    border: 1px solid #c1c1c1;
+    font-weight: 400;
+}
+
+.payment-buttons .notallowed {
+    color: #c1c1c1;
+    border: 1px solid #c1c1c1;
+}
+
+.subtotal {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 0;
+}
+
+.subtotal p {
+    margin: 10px; 
+}
+
+.subclass {
+    color: #c1c1c1;
+}
+
+.mainclass {
+    width: 15%;
+    margin-right: 0;
+    text-align: right;
+}
+
+#totalpayment {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.checkout {
+    margin-top: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.invoice-container {
+    max-width: 600px;
+    margin: auto;
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #333;
+}
+.invoice-container {
+    background-color: #fff;
+    max-height: 80vh;
+    margin: 20px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.invoice-table {
+    width: 100%;
+    border-collapse: collapse;
+    height: 200px;
+    margin-top: 15px;
+}
+
+.invoice-table th, .invoice-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.invoice-table th {
+    background-color: #f2f2f2;
+}

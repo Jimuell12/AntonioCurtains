@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+
+<head>
+   <meta charset="utf-8">
+   <title>Antonio's Curtains & Upholstery</title>
+   <link rel="icon" href="../images/logo.png" type="image/x-icon" />
+   <link rel="stylesheet" href="/css/register.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+   <section id="loader">
+      <div class="dots">
+         <span style="--i:1;"></span>
+         <span style="--i:2;"></span>
+         <span style="--i:3;"></span>
+         <span style="--i:4;"></span>
+         <span style="--i:5;"></span>
+         <span style="--i:6;"></span>
+         <span style="--i:7;"></span>
+         <span style="--i:8;"></span>
+         <span style="--i:9;"></span>
+         <span style="--i:10;"></span>
+         <span style="--i:11;"></span>
+         <span style="--i:12;"></span>
+         <span style="--i:13;"></span>
+         <span style="--i:14;"></span>
+         <span style="--i:15;"></span>
+      </div>
+   </section>
+   <div class="wrapper">
+      <div class="title-text">
+         <div class="title login">
+            Antonio's Curtains & Upholstery
+         </div>
+         <div class="title signup">
+            Antonio's Curtains & Upholstery
+         </div>
+      </div>
+      <div class="form-container">
+         <div class="slide-controls">
+            <input type="radio" name="slide" id="login" checked>
+            <input type="radio" name="slide" id="signup">
+            <label for="login" class="slide login">Login</label>
+            <label for="signup" class="slide signup">Signup</label>
+            <div class="slider-tab"></div>
+         </div>
+         <div id="logerror">invalid email or password</div>
+         <div class="form-inner">
+            <form action="#" class="login">
+               <div class="field">
+                  <input id="email" type="text" placeholder="Email Address" required>
+               </div>
+               <div class="field">
+                  <input id="password" type="password" placeholder="Password" required>
+                  <span class="toggle-password" onclick="togglePasswordVisibility('password')">
+                     <i class="fa-regular fa-eye-slash"></i>
+                  </span>
+               </div>
+               <div class="pass-link">
+                  <a id="forgot-password">Forgot password?</a>
+               </div>
+               <div class="field btn">
+                  <div class="btn-layer"></div>
+                  <input id="loginbutton" type="submit" value="Login">
+               </div>
+               <div class="signup-link">
+                  Not a member? <a href="">Signup now</a>
+               </div>
+            </form>
+            <form action="#" class="signup">
+               <div id="regerror">invalid account</div>
+               <div class="field">
+                  <input id="Username" type="text" placeholder="Username" required>
+               </div>
+               <div class="field">
+                  <input id="Email" type="text" placeholder="Email Address" required>
+               </div>
+               <div class="field">
+                  <input id="Name" type="text" placeholder="Full Name" required>
+               </div>
+               <div class="field">
+                  <input id="Password" type="password" placeholder="Password" required>
+                  <span class="toggle-password" onclick="togglePasswordVisibility('Password')">
+                     <i class="fa-regular fa-eye-slash"></i>
+                  </span>
+               </div>
+               <div class="field">
+                  <input id="ConfirmPassword" type="password" placeholder="Confirm Password" required>
+                  <span class="toggle-password" onclick="togglePasswordVisibility('ConfirmPassword')">
+                     <i class="fa-regular fa-eye-slash"></i>
+                  </span>
+               </div>
+               <div class="field">
+                  <input id="Address" type="text" placeholder="Address" required>
+               </div>
+               <div class="field">
+                  <input id="Contact" type="number" placeholder="Contact Number" maxlength="11" required>
+               </div>
+
+               <div class="field btn">
+                  <div class="btn-layer"></div>
+                  <input id="registerbutton" type="submit" value="Signup">
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+   <script>
+      const loginText = document.querySelector(".title-text .login");
+      const loginForm = document.querySelector("form.login");
+      const loginBtn = document.querySelector("label.login");
+      const signupBtn = document.querySelector("label.signup");
+      const signupLink = document.querySelector("form .signup-link a");
+      const logerror = document.querySelector("#logerror");
+      const regerror = document.querySelector("#regerror");
+      signupBtn.onclick = (() => {
+         loginForm.style.marginLeft = "-50%";
+         loginText.style.marginLeft = "-50%";
+         logerror.style.display = "none";
+
+      });
+      loginBtn.onclick = (() => {
+         loginForm.style.marginLeft = "0%";
+         loginText.style.marginLeft = "0%";
+         regerror.style.display = "none"
+      });
+      signupLink.onclick = (() => {
+         signupBtn.click();
+         return false;
+      });
+      function togglePasswordVisibility(inputId) {
+         const passwordInput = document.getElementById(inputId);
+         const eyeIcon = passwordInput.nextElementSibling.querySelector("i");
+
+         if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            eyeIcon.classList.remove("fa-eye-slash");
+            eyeIcon.classList.add("fa-eye");
+         } else {
+            passwordInput.type = "password";
+            eyeIcon.classList.remove("fa-eye");
+            eyeIcon.classList.add("fa-eye-slash");
+         }
+      }
+
+   </script>
+   <script type="module" src="../js/firebase.js"></script>
+   <script type="module" src="../js/auth.js"></script>
+</body>
+
+</html>

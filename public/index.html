@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antonio's Curtains & Upholstery</title>
+    <link rel="icon" href="/images/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href='https://fonts.googleapis.com/css?family=Crimson Pro' rel='stylesheet'>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jscolor/2.4.5/jscolor.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/home.css">
+    <link rel="stylesheet" type="text/css" href="./css/appointment.css">
+    <link rel="stylesheet" type="text/css" href="./css/account.css">
+    <link rel="stylesheet" type="text/css" href="./css/aboutus.css">
+    <link rel="stylesheet" type="text/css" href="./css/products.css">
+    <link rel="stylesheet" type="text/css" href="./css/productdetails.css">
+    <link rel="stylesheet" type="text/css" href="./css/cart.css">
+</head>
+
+<body>
+
+    <div class="site-name slide-in"><img src="./images/logo.png">Antonio's Curtains & Upholstery</div>
+    <div class="searchxuser slide-out">
+        <div class="search-bar">
+            <input type="text" placeholder="Search..." id="searchInput">
+            <button class="search-button" id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <button onclick="window.location.href = '/templates/login.html'" class="account-button">Create Account</button>
+        <div class="useraccount">
+            <div class="circle"><i class="fa-solid fa-user fa-lg"></i></div>
+        </div>
+    </div>
+    <nav>
+        <ul>
+            <li><a class="navhome">Home</a></li>
+            <li><a class="navproducts">Products</a></li>
+            <li><a class="navappointment">Appointment</a></li>
+            <li><a class="navaboutus">About Us</a></li>
+            <li><a class="navcart">Cart</a></li>
+        </ul>
+    </nav>
+
+    <button class="account-button" onclick="window.location.href='./templates/login.html'">Create Account</button>
+
+
+
+    <div class="Home">
+        <div class="webtitle">
+            <span>A N T O N I O's </span>
+            <span>C U R T A I N S & U P H O L S T E R Y</span>
+        </div>
+
+        <div class="website-description slide-up">
+            <p>Welcome to our Antonio's Curtains & Upholstery Services Co., Ltd! We are dedicated to providing you with
+                a seamless online shopping experience. Explore our diverse range of products, make appointments, and
+                learn more about our company. Your satisfaction is our priority, and we strive to make your journey with
+                us enjoyable and convenient.</p>
+        </div>
+
+        <div class="card-container slide-up" id="cardContainer">
+        </div>
+    </div>
+
+    <div class="Products">
+        <div class="top-bar">
+            <button class="sort-button"><i class="fa-solid fa-sort"></i></button>
+            <div id="sort-form-container" style="display: none;">
+                <form id="sort-form">
+                    <p>Sort</p>
+                    <hr>
+                    <input type="radio" id="All" name="productType" value="" checked>
+                    <label for="All">All</label><br>
+
+                    <input type="radio" id="Table" name="productType" value="Table">
+                    <label for="Table">Table</label><br>
+
+                    <input type="radio" id="Bed" name="productType" value="Bed">
+                    <label for="Bed">Bed</label><br>
+
+                    <input type="radio" id="Curtains" name="productType" value="Curtains">
+                    <label for="Curtains">Curtains</label><br>
+
+                    <input type="radio" id="Dining Sets" name="productType" value="Dining Sets">
+                    <label for="Dining Sets">Dining Sets</label><br>
+
+                    <input type="radio" id="Chair" name="productType" value="Chair">
+                    <label for="Chair">Chairs</label>
+
+                    <div class="filter-buttons">
+                        <button class="Applyfilter">Apply</button>
+                        <button class="Cancelfilter">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="product-container" id="productContainer">
+        </div>
+    </div>
+
+    <div class="ProductDetails">
+        <div class="product-details-container">
+            <div class="product-image slide-up">
+                <div class="mainimage">
+                    <img src="https://media.macphun.com/img/uploads/customer/how-to/608/15542038745ca344e267fb80.28757312.jpg?q=85&w=1340"
+                        alt="Product Image" id="productDetailsImage">
+                </div>
+                <div class="belowimagecontainer">
+                    <div class="subimage">
+                        <div id="subimageContainer"></div>
+                        <div id="imagebuttons">
+                            <button id="left-image"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button id="right-image"><i class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="details slide-out">
+                <p id="productType"></p>
+                <h2 id="productName"></h2>
+                <div class="ratingxsold">
+                    <div id="productrating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <hr>
+                    <p id="soldquantity">0</p>
+                    <p class="soldtext"> Sold</p>
+                </div>
+                <p id="productDetailsPrice"></p>
+                <div class="quantity">
+                    <p>Quantity</p>
+                    <div class="quantity-controller">
+                        <button aria-label="Decrease" id="decrease"><i class="fa-solid fa-minus"></i></button>
+                        <input type="text" role="spinbutton" id="quantityInput" value="1" aria-valuenow="1"
+                            aria-live="assertive" readonly>
+                        <button aria-label="Increase" id="increase"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                    <p id="availableStock">0 available</p>
+                </div>
+                <button class="customize"><i class="fa-solid fa-pen-to-square"></i>Customize</button>
+
+                <div class="addtocartxbuynow">
+                    <button class="addtocart"><i class="fa-solid fa-cart-plus"></i>Add to Cart</button>
+                    <button class="buynow">Place Order</button>
+                </div>
+                <hr>
+                <div class="badgelogo">
+                    <img src="./images/logo.png" alt="">
+                    <p>Antonio's Curtains & Upholstery</p>
+                </div>
+            </div>
+        </div>
+        <div class="Product-Ratings">
+            <h2>Product Description</h2>
+            <p id="description">
+
+            </p>
+            <h2>Product Ratings</h2>
+            <div class="productRating">
+
+            </div>
+            <div class="add-review"><button><i class="fa-solid fa-plus"></i> Review</button></div>
+            <div id="ratings">
+            </div>
+
+            <div class="overlay" id="rating-overlay" style="display: none;">
+                <div class="review-form-container">
+                    <h2>Add Your Review</h2>
+                    <form id="review-form">
+                        <label for="stars">Stars:</label>
+                        <select id="stars" name="stars">
+                            <option value="1">1 star</option>
+                            <option value="2">2 stars</option>
+                            <option value="3">3 stars</option>
+                            <option value="4">4 stars</option>
+                            <option value="5">5 stars</option>
+                        </select>
+                        <br>
+
+                        <label for="review">Review:</label><br>
+                        <textarea id="review" name="review" rows="4" cols="50"
+                            placeholder="Enter Message Here"></textarea>
+
+                        <button type="button" id="submitreview">Submit Review</button>
+                        <button type="button" id="closereview">Close</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="overlay" id="productDetailsOverlay" style="display: none;">
+            <div class="product-details-form">
+                <label for="material">Material:</label>
+                <select id="material" name="material">
+                    <option value="cotton">Cotton</option>
+                    <option value="leather">Leather</option>
+                    <option value="silk">Silk</option>
+                    <!-- Add more options as needed -->
+                </select>
+
+                <label for="height">Height(inches):</label>
+                <input type="number" id="height" name="height" min="0">
+
+                <label for="width">Width(inches):</label>
+                <input type="number" id="width" name="width" min="0">
+
+                <label for="length">Length(inches):</label>
+                <input type="number" id="length" name="length" min="0">
+
+                <label for="color">Color:</label>
+                <input type="text" id="color" name="color" class="jscolor {onFineChange:'updateColor(this)'}">
+
+                <label for="totalPrice">Total Price:</label>
+                <input type="number" id="totalPrice" name="totalPrice" readonly>
+
+                <button id="submitProductDetails"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+                <button id="cancelProductDetails">Cancel</button>
+            </div>
+        </div>
+
+        <div class="modal" id="addToCartModal">
+            <div class="modal-content">
+                <div class="check">
+                    <i class="fa-solid fa-check fa-2xl"></i>
+                </div>
+                <p id="modalMessage"></p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="Appointment">
+        <section id="banner">
+            <h1 class="slide-in">S C H E D U L E T O D A Y</h1>
+            <p class="slide-up">We're here to assist you. Schedule your appointment for personalized service.</p>
+        </section>
+
+        <div class="appointment-form slide-up">
+            <form id="appointmentForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="contact">Contact Number:</label>
+                <input type="text" id="contact" name="contact" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="dateTime">Date and Time:</label>
+                <input type="datetime-local" id="dateTime" name="dateTime" required>
+
+                <label for="appoinment-location">Location:</label>
+                <div class="dropdown-container">
+                    <select id="appoinment-location" name="appoinment-location">
+                        <option value="Site Visit">Site Visit</option>
+                        <option value="Office Visit">Office Visit</option>
+                    </select>
+                </div>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+
+                <button type="button" id="submitappointment">Submit</button>
+            </form>
+        </div>
+
+        <div class="appointment-table">
+            <table id="appointmentTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Contact Number</th>
+                        <th>Email</th>
+                        <th>Date and Time</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="AboutUs">
+        <section id="banner2">
+            <h1 class="slide-out">#A B O U T U S</h1>
+            <p class="slide-up">Connect with us on social media to stay updated on the latest trends, promotions, and
+                more:</p>
+        </section>
+        <div class="information">
+            <div class="socialmedia">
+
+                <p class="slide-out">Welcome to Antonio's Curtains & Upholstery Services Co. Ltd – your premier
+                    destination for exquisite furniture and unparalleled upholstery services. Discover a world where
+                    craftsmanship meets style, and each piece is a testament to timeless elegance. Transform your space
+                    with Antonio's, where quality and sophistication unite seamlessly.
+
+                    Connect with us on social media to stay updated on the latest trends, promotions, and more:</p>
+                <div class="email slide-in">
+                    <div class="emailicon"><i class="fa-solid fa-envelope fa-xl socialmediaicon"></i></div>
+                    antonioscurtains.co.ltd@hotmail.com
+                </div>
+                <div class="fb slide-out"
+                    onclick="window.location.href='https://www.facebook.com/AntoniosCurtainsUpholsteryServicesCoLtd'">
+                    <div class="fbicon"><i class="fa-brands fa-facebook fa-2xl socialmediaicon"></i></div>Antonio's
+                    Curtains & Upholstery Services Co. Ltd
+                </div>
+                <div class="contactno slide-in">
+                    <div class="contacticon"><i class="fa-solid fa-phone fa-xl socialmediaicon"></i></div>
+                    (02)8640-5895/+63918-4358085
+                </div>
+            </div>
+            <iframe class="slide-up"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1930.7779189511332!2d121.0681170383692!3d14.56737379246421!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c8706d420c1f%3A0x9eac4af078e6c4db!2sAntonios%20Curtains!5e0!3m2!1sen!2sph!4v1700417574624!5m2!1sen!2sph"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+
+    <div class="Cart slide-up">
+        <div class="product-delivery-address">
+            <div class="addresstitle">
+                <i class="fa-solid fa-location-dot"></i>
+                <p>Delivery Address</p>
+            </div>
+            <div class="namexbutton">
+                <p id="cart-address"></p>
+                <button class="add-address" id="edit-new-address"><i class="fa-solid fa-plus"></i> Edit New
+                    Address</button>
+            </div>
+        </div>
+        <div class="overlay" id="delivery-overlay" style="display: none;">
+            <div class="delivery-form">
+                </form method="POST" action="">
+                <div class="col-sm-6">
+                    <h3>New Address</h3>
+                </div>
+                <div class="delivery-details">
+                    <input type="text" name="delivery-name" id="delivery-name" placeholder="Full Name">
+                    <input type="number" name="deliver-number" id="deliver-number" placeholder="Phone Number">
+                </div>
+                <div class="col-sm-6 mb-3">
+                    <select name="region" class="form-control form-control-md" id="region"></select>
+                    <input type="hidden" class="form-control form-control-md" name="region_text" id="region-text"
+                        required>
+                </div>
+                <div class="col-sm-6 mb-3">
+                    <select name="province" class="form-control form-control-md" id="province"></select>
+                    <input type="hidden" class="form-control form-control-md" name="province_text" id="province-text"
+                        required>
+                </div>
+                <div class="col-sm-6 mb-3">
+                    <select name="city" class="form-control form-control-md" id="city"></select>
+                    <input type="hidden" class="form-control form-control-md" name="city_text" id="city-text" required>
+                </div>
+                <div class="col-sm-6 mb-3">
+                    <select name="barangay" class="form-control form-control-md" id="barangay"></select>
+                    <input type="hidden" class="form-control form-control-md" name="barangay_text" id="barangay-text"
+                        required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <input type="text" class="form-control form-control-md" name="street_text" id="street-text"
+                        placeholder="Street Name, Building, House No.">
+                </div>
+                <div class="col-md-6 hobutton">
+                    <input type="submit" class="btn btn-success" name="submit">
+                    <input type="submit" class="btn btn-cancel" name="Cancel" value="Cancel">
+                </div>
+                </form>
+            </div>
+        </div>
+        <div class="product-table-container">
+            <table class="product-table">
+                <thead>
+                    <tr>
+                        <th class="productcolumn">Product</th>
+                        <th>Unit Price</th>
+                        <th>Quantity</th>
+                        <th>Total Price</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="product-cart-body">
+                </tbody>
+            </table>
+        </div>
+        <div class="paymentmethod">
+            <p>Payment Method</p>
+            <div class="payment-buttons">
+                <button class="cod selected">Cash on Delivery/Pickup</button>
+            </div>
+        </div>
+        <div class="paymentmethod">
+            <p>Delivery Options</p>
+            <div class="payment-buttons">
+                <button class="cod2">Door-to-Door</button>
+                <button class="cod2">Self-Pickup</button>
+            </div>
+        </div>
+        <div class="product-checkout">
+            <div class="subtotal">
+                <p class="mainclass" id="overalltotal"></p>
+                <p class="subclass">Merchandise Subtotal: </p>
+            </div>
+            <div class="subtotal">
+                <p class="mainclass" id="shippingtotal">₱0</p>
+                <p class="subclass">Shipping Total: </p>
+            </div>
+            <div class="subtotal">
+                <p class="mainclass" id="totalpayment">P20000</p>
+                <p class="subclass">Total Payment: </p>
+            </div>
+            <button class="checkout" id="checkoutButton">Check Out</button>
+        </div>
+        <div class="overlay" id="displayInvoiceOverlay">
+            <div class="invoiceoverlaycontainer">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="Account slide-in">
+        <div class="account-settings">
+            <div class="profile">
+                <div class="profile-image">
+                    <label for="profilePictureInput">
+                        <img src="/images/bg.png" alt="Profile Picture" id="profilePicture">
+                    </label>
+                    <input type="file" id="profilePictureInput" accept=".jpg, .png, .jpeg" style="display: none">
+                </div>
+                <div class="profile-details">
+                    <h2 id="userUserName">UserName</h2>
+                    <p>Name: <span id="userName">Name</span></p>
+                    <p>Contact No.: <span id="userContact">09xxxxxxxx</span></p>
+                    <p>Email: <span id="userEmail">useremail@email.com</span></p>
+                    <p>Address: <span id="userAddress">123 East Street, Main City</span></p>
+
+                    <div class="update-button">
+                        <button>Update Details</button>
+                    </div>
+                    <div class="logout-button">
+                        <button>Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="overlay" id="overlay" style="display: none;">
+            <div class="update-form">
+                <label for="username">Username:</label>
+                <input type="text" id="update-username" name="username">
+
+                <label for="password">Password:</label>
+                <input type="password" id="update-password" name="password">
+
+                <label for="name">Name:</label>
+                <input type="text" id="update-name" name="name">
+
+                <label for="contact">Contact Number:</label>
+                <input type="text" id="update-contact" name="contact">
+
+                <label for="email">Email:</label>
+                <input type="email" id="update-email" name="email" readonly class="grayed">
+
+                <label for="address">Address:</label>
+                <input type="text" id="update-address" name="address" rows="4"></input>
+
+                <label for="accounttype" style="display: none;">Account Type:</label>
+                <div class="dropdown-container" style="display: none;">
+                    <select id="update-account-type" name="accounttype">
+                        <option value="Customer">Customer</option>
+                        <option value="Admin">Admin</option>
+                    </select>
+                </div>
+
+
+                <button class="update-submit-button">Update</button>
+                <button class="cancel-button">Cancel</button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="pixel-spinner">
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+    </div>
+
+    <script type="module" src="./js/firebase.js"></script>
+    <script type="module" src="./js/script.js"></script>
+    <script type="module" src="./js/appointment.js"></script>
+    <script type="module" src="./js/account.js"></script>
+    <script type="module" src="./js/products.js"></script>
+    <script type="module" src="./js/productdetails.js"></script>
+    <script type="module" src="./js/cart.js"></script>
+    <script type="module" src="./js/apicall.js"></script>
+    <script type="module" src="./js/home.js"></script>
+    <script src="./js/ph-address-selector.js"></script>
+
+</body>
+
+</html>
